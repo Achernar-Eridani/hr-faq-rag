@@ -47,17 +47,11 @@ def ask(req: AskRequest):
     
     # --- 3. 策略路由层 (Router) ---
     
-    # 阈值配置 
-    DIRECT_THRESHOLD = float(os.getenv("DIRECT_THRESHOLD", "0.83"))
-    MIN_THRESHOLD = float(os.getenv("MIN_THRESHOLD", "0.40"))
-    GAP_THRESHOLD = float(os.getenv("GAP_THRESHOLD", "0.02"))
-
-    best = candidates[0] if candidates else None
-    second = candidates[1] if candidates and len(candidates) > 1 else None
-    gap_ok = (second is None) or ((best.score - second.score) >= GAP_THRESHOLD)
+    DIRECT_THRESHOLD = 0.80  # 高于此分，直接返回原文 (快)
+    MIN_THRESHOLD = 0.40     # 低于此分，认为没查到 (准)
     
     # 场景 A: 命中率极高 & 用户没强制 AI -> 直通模式 (Direct)
-    if candidates and best.score >= DIRECT_THRESHOLD and gap_ok and not req.rewrite:
+    if candidates and best_score >= DIRECT_THRESHOLD and not req.rewrite:
         best = candidates[0]
         resp = AskResponse(
             hit=True,
