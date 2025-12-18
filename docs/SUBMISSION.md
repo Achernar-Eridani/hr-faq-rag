@@ -65,11 +65,7 @@ uvicorn app.main:app --reload --port 8000
 
 ### 3.2 Swagger / OpenAPI
 
-* 打开：`http://127.0.0.1:8000/docs`
-
-📌【截图放这里】
-
-* 截图：Swagger 页面（/docs），显示 `/ask` 接口与请求/响应结构
+<img src="/Users/eridani/Library/Application Support/typora-user-images/截屏2025-12-18 下午5.02.07.png" alt="截屏2025-12-18 下午5.02.07" style="zoom:20%;" />
 
 ---
 
@@ -164,7 +160,7 @@ python scripts/smoke_test.py
 python scripts/benchmark_locust_mock.py
 ```
 
-📌<img src="/Users/eridani/Library/Application Support/typora-user-images/截屏2025-12-18 下午4.49.08.png" alt="截屏2025-12-18 下午4.49.08" style="zoom:50%;" />
+<img src="/Users/eridani/Library/Application Support/typora-user-images/截屏2025-12-18 下午4.49.08.png" alt="截屏2025-12-18 下午4.49.08" style="zoom:50%;" />
 
 <img src="/Users/eridani/Movies/录屏/截屏2025-12-18 下午4.55.53.png" alt="截屏2025-12-18 下午4.55.53" style="zoom:50%;" />
 
