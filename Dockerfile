@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # 5. 先复制 requirements.txt 并安装，利用 Docker 缓存层加速构建
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 # 6. 复制项目所有代码到镜像中
 COPY . .
 

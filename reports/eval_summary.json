@@ -1,0 +1,9 @@
+{
+  "test_size": 56,
+  "top1_accuracy": 0.875,
+  "top3_accuracy": 1.0,
+  "latency_ms_avg": 195.41885710454412,
+  "latency_ms_p95": 42.68508299719542,
+  "latency_ms_max": 9502.506749995518,
+  "badcase_count": 7
+}
